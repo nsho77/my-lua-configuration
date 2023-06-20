@@ -3,11 +3,15 @@
 -- noinsert: Only insert text when selection is confirmed
 -- noselect: force us to select one from the suggestions
 vim.opt.completeopt = {'menuone', 'noselect', 'noinsert', 'preview'}
--- shortmess is used to avoid excessive messages
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
 
 local cmp = require'cmp'
 cmp.setup({ 
+    -- Required by vsnip
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
 
     mapping = {
         -- Shift+TAB to go to the Previous Suggested item
@@ -25,8 +29,8 @@ cmp.setup({
         -- CR (enter or return) to CONFIRM the currently selection suggestion
         -- We set the ConfirmBehavior to insert the Selected suggestion
         ['<CR>'] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Insert,
-          select = true,
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
         })
     },
 
