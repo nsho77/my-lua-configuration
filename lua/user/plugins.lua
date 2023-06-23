@@ -20,6 +20,14 @@ return require('packer').startup(function(use)
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig' 
 
+    -- Colorschemes
+    use {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    }
+
     -- Hrsh7th Code Completion Suite
     use 'hrsh7th/nvim-cmp' 
     use 'hrsh7th/cmp-nvim-lsp'
