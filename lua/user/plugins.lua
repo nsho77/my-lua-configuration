@@ -16,9 +16,6 @@ packer.init {
 return require('packer').startup(function(use)
     -- Configurations will go here soon
     use 'wbthomason/packer.nvim'
-    use 'williamboman/mason.nvim'   
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'neovim/nvim-lspconfig' 
 
     -- Colorschemes
     use {
@@ -37,6 +34,11 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'                              
     use 'hrsh7th/cmp-buffer'                            
     use 'hrsh7th/vim-vsnip'
+
+    -- LSP
+    use 'neovim/nvim-lspconfig' 
+    use 'williamboman/mason.nvim'   
+    use 'williamboman/mason-lspconfig.nvim'
 
     -- File explorer tree
     use {
