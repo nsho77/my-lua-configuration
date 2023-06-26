@@ -41,6 +41,12 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
+keymap('n', '<leader>fb', "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
+keymap('n', '<leader>fh', "<cmd>lua require'telescope.builtin'.help_tags()<cr>", opts)
+
 -- Insert --
 
 -- Visual --
@@ -51,7 +57,7 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "<leader>p", '"_dP', opts)
+keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
