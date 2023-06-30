@@ -64,4 +64,7 @@ return require('packer').startup(function(use)
     -- Autopairs, integrates with both cmp and treesitter
     use "windwp/nvim-autopairs"
 
+    -- Easily comment stuff
+    use "numToStr/Comment.nvim" 
+
 end)
