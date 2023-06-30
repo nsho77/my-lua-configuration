@@ -67,4 +67,7 @@ return require('packer').startup(function(use)
     -- Easily comment stuff
     use "numToStr/Comment.nvim" 
 
+    -- Git
+    use "lewis6991/gitsigns.nvim"
+
 end)
