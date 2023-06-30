@@ -61,4 +61,7 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- Autopairs, integrates with both cmp and treesitter
+    use "windwp/nvim-autopairs"
+
 end)
